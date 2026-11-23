@@ -15,7 +15,7 @@ window.VX_I18N = {
     "nav.contact": "تواصل معنا",
     "nav.cta": "راسلنا",
 
-    "hero.eyebrow": "Cloud & IT Solutions",
+    "hero.eyebrow": "All your IT in one place.",
     "hero.title": "امنح فكرتك <span class=\"vx-accent\">بيتاً على السحابة</span>.",
     "hero.lead": "تدير VeltroSys البنية التقنية التي يعمل عليها موقعك أو تطبيقك، مع استضافة VPS السحابية وحلول تقنية عملية ودعم يبقى معك.",
     "hero.cta1": "استكشف الخدمات",
@@ -79,8 +79,8 @@ window.VX_I18N = {
     "form.send": "أرسل الرسالة",
     "form.note": "هذه نسخة قالب: النموذج غير متصل بعد. راجع ملف README.md لربطه ببريدك أو بخدمة نماذج.",
 
-    "footer.slogan": "Cloud & IT Solutions",
-    "footer.copy": "© 2026 VeltroSys. Cloud & IT Solutions."
+    "footer.slogan": "All your IT in one place.",
+    "footer.copy": "© 2026 VeltroSys. All your IT in one place."
   }
 };
 
@@ -95,3 +95,6 @@ Object.assign(window.VX_I18N.ar,{"store.demobanner": "دليل توضيحي فق
 Object.assign(window.VX_I18N.ar,{"footer.next": "نحو الخطوة التالية", "footer.headline": "تقنياتك.<br>في صورة متكاملة.", "footer.description": "إدارة تقنية المعلومات في الأساس. والاستضافة والبنية التحتية والتطوير والاستشارات حولها.", "footer.services": "خدماتنا", "footer.managed": "إدارة التقنية وعقود AMC", "footer.hosting": "الاستضافة", "footer.infrastructure": "البنية التحتية", "footer.development": "التطوير والاستشارات", "footer.explore": "اكتشف", "footer.start": "ابدأ الآن", "footer.product": "طلب منتج", "footer.offer": "عرض إطلاق VPS Cloud", "footer.top": "العودة للأعلى ↑"});
 
 Object.assign(window.VX_I18N.ar,{"footer.socialnote":"روابط التواصل قريباً. الأيقونات غير مفعلة."});
+
+/* Approved English slogan is kept verbatim in both language views. */
+window.VX_I18N.ar["hero.eyebrow"] = "All your IT in one place.";
