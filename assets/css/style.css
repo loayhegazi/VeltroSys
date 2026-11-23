@@ -650,3 +650,67 @@ body{margin:0}
 @media(max-width:700px){.vx-header .vx-brand-logo{height:42px}.vx-header-inner{height:76px}.vx-space::after{background:linear-gradient(180deg,#0f172a88,transparent)}.vx-depth-object:nth-of-type(n+5){display:none}.vx-space-grid{background-size:60px 60px;opacity:.6}.vx-license-heading{padding-top:20px}.vx-license-heading h3{font-size:24px}}
 @media(max-width:380px){.vx-header .vx-brand-logo{height:38px}.vx-header-actions{gap:5px}.vx-header-inner{gap:6px}}
 @media(prefers-reduced-motion:reduce){.vx-space *{animation:none!important}.vx-depth-object{transform:rotateX(24deg) rotateY(34deg) rotateZ(-14deg)}}
+
+/* Revision 5: a continuous dimensional canvas, separated content islands. */
+body{margin:0;background:#081221}
+.vx-site{position:relative;isolation:isolate;background:linear-gradient(145deg,#091526,#102d40 54%,#0b172b);overflow-x:clip}
+.vx-site .vx-page-space{position:fixed;inset:0;height:100vh;z-index:-1;background:radial-gradient(ellipse at 72% 24%,#0e749038,transparent 65%)}
+.vx-page-space::after{background:linear-gradient(180deg,#07111d22,#07111d44)}
+.vx-page-space .vx-space-grid{top:12%;height:150%;mask-image:radial-gradient(ellipse,#000c,transparent 72%);opacity:.85}
+.vx-page-space .vx-depth-face{border-color:#67e8f9b3;background:linear-gradient(135deg,#22d3ee18,#0e749036)}
+.vx-site .vx-hero,.vx-site .vx-store-hero{background:transparent}
+.vx-section.vx-bg-soft{background:transparent}
+.vx-site .vx-section{padding:36px 24px;position:relative;color:#c7d8e7}
+.vx-site .vx-section>.vx-container{padding:52px;max-width:1140px;border:1px solid #5acbe033;border-radius:28px;background:linear-gradient(125deg,#122b40f2,#0c1c2ee8);box-shadow:0 22px 65px #02061733,inset 0 1px #d5faff0b}
+.vx-site .vx-section:nth-of-type(2n)>.vx-container{background:linear-gradient(125deg,#123346ed,#102235f0)}
+.vx-site .vx-section>.vx-container-narrow{max-width:960px}
+.vx-site .vx-section h2,.vx-site .vx-section .vx-split-copy h3,.vx-site .vx-license-heading h3{color:#f1f8ff}
+.vx-site .vx-section-sub,.vx-site .vx-license-heading p{color:#bfd0df;line-height:1.85}
+.vx-site .vx-section .vx-eyebrow{color:#75e7f5;letter-spacing:.12em;font-size:12px}
+.vx-site .vx-section-head{margin-bottom:36px;max-width:720px}
+.vx-site .vx-card,.vx-site .vx-flagship,.vx-site .vx-finder-result,.vx-site .vx-form,.vx-site .vx-faq details,.vx-site .vx-product,.vx-site .vx-request-panel,.vx-site .vx-catalog-empty{color:#475569;box-shadow:0 14px 32px #0206171a}
+.vx-site .vx-card h3,.vx-site .vx-flagship h3,.vx-site .vx-finder-result h3,.vx-site .vx-product h3,.vx-site .vx-catalog-empty h3{color:#0f172a}
+.vx-site .vx-card .vx-eyebrow,.vx-site .vx-finder-result .vx-eyebrow{color:#0e7490}
+.vx-site .vx-portfolio>.vx-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding:0;margin-top:24px}
+.vx-site .vx-portfolio>.vx-grid::before,.vx-site .vx-portfolio>.vx-grid>.vx-card::before{display:none}
+.vx-site .vx-portfolio>.vx-grid>.vx-card{display:flex;flex-direction:column;gap:12px;background:#f5f9fc;border:1px solid #d8e8ef;border-radius:20px;padding:28px;box-shadow:0 14px 32px #0206171a}
+.vx-site .vx-portfolio>.vx-grid>.vx-card>p{max-width:none;align-self:stretch;font-size:.94rem;line-height:1.8;margin:0}
+.vx-site .vx-portfolio .vx-service-list{display:flex;flex-direction:column;gap:8px;margin:2px 0 8px;align-content:stretch}
+.vx-site .vx-portfolio .vx-service-list li{padding:7px 10px;background:#e9f2f6;border-color:#d6e7ee;line-height:1.5}
+.vx-site .vx-portfolio .vx-text-link{margin-top:auto;font-size:.85rem;line-height:1.6}
+.vx-site .vx-section .vx-offer h2{color:white}
+.vx-site .vx-request-disclaimer{background:#14364b;border-color:#3e6b80}
+.vx-site .vx-request-disclaimer p{color:#c7d8e7}.vx-site .vx-request-disclaimer strong{color:#78e5f2}
+.vx-site .vx-case-steps{color:#c1d6e5}.vx-site .vx-case-steps span{border-color:#466274}
+.vx-site .vx-footer{background:#091524e8;margin-top:36px;border-top:1px solid #315167}
+.vx-site .vx-email-link{display:flex;align-items:center;gap:12px;max-width:max-content;min-height:54px;padding:14px 18px;margin:24px 0;border-radius:14px;background:#154158;border:1px solid #4ba9be;color:#dcfaff;font-size:clamp(14px,2vw,18px);font-weight:600;overflow-wrap:anywhere}
+.vx-site .vx-email-link:hover{background:#1a526b}.vx-site .vx-footer-email{display:block;color:#9beaf5;font-size:14px;margin:14px 0}
+.vx-site a:focus-visible,.vx-site button:focus-visible{outline:3px solid #22d3ee;outline-offset:4px}
+/* Glass stays translucent, but link text always has a solid contrast base. */
+.vx-site .vx-header{background:linear-gradient(115deg,#f0faffee,#dceff4de);backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);border-bottom:1px solid #a3d4e0;box-shadow:0 8px 30px #02061726}
+.vx-site .vx-nav{padding:5px;gap:2px;border:1px solid #5e91a34d;border-radius:16px;background:linear-gradient(115deg,#173c50ed,#102438f0);box-shadow:inset 0 1px #e0ffff22,0 8px 24px #0f172a14;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+.vx-site .vx-nav a{position:relative;display:flex;align-items:center;min-height:44px;padding:10px 12px;font-size:12px;font-weight:600;line-height:1.4;white-space:nowrap;border-radius:11px;color:#e3f3fb;transition:background .25s,transform .25s,color .25s;letter-spacing:.01em}
+.vx-site .vx-nav a:hover,.vx-site .vx-nav a:focus-visible,.vx-site .vx-nav a[aria-current=page]{background:#37738d66;color:#a3f2ff;transform:translateY(-1px)}
+.vx-site .vx-nav a::after{content:'';position:absolute;bottom:4px;inset-inline:12px;height:2px;background:#67e8f9;transform:scaleX(0);transform-origin:center;transition:transform .25s}
+.vx-site .vx-nav a:hover::after,.vx-site .vx-nav a[aria-current=page]::after{transform:scaleX(1)}
+.vx-site .vx-header-inner{gap:14px}.vx-site .vx-header-actions{gap:8px}.vx-site .vx-header .vx-btn-sm{font-size:12px;padding-inline:14px}
+.vx-burger span{transition:transform .25s,opacity .2s}.vx-burger[aria-expanded=true] span:first-child{transform:translateY(7px) rotate(45deg)}.vx-burger[aria-expanded=true] span:nth-child(2){opacity:0}.vx-burger[aria-expanded=true] span:last-child{transform:translateY(-7px) rotate(-45deg)}
+.vx-site.vx-dark .vx-header{background:linear-gradient(110deg,#0e2639eb,#102034e8);border-color:#345d73}
+.vx-site.vx-dark .vx-card,.vx-site.vx-dark .vx-faq details,.vx-site.vx-dark .vx-form,.vx-site.vx-dark .vx-product,.vx-site.vx-dark .vx-catalog-empty,.vx-site.vx-dark .vx-request-panel,.vx-site.vx-dark .vx-finder-result,.vx-site.vx-dark .vx-flagship{background:#142d42;color:#ccdae5;border-color:#3e6075}
+.vx-site.vx-dark .vx-card h3,.vx-site.vx-dark .vx-flagship h3,.vx-site.vx-dark .vx-finder-result h3,.vx-site.vx-dark .vx-product h3,.vx-site.vx-dark .vx-catalog-empty h3{color:#f0f8ff}
+.vx-site.vx-dark .vx-portfolio .vx-service-list li{background:#1a3b50;color:#d9eaf4;border-color:#426177}
+.vx-site.vx-dark .vx-card .vx-eyebrow,.vx-site.vx-dark .vx-finder-result .vx-eyebrow{color:#75e7f5}
+@media(min-width:1151px){.vx-site .vx-header .vx-brand-logo{height:42px}.vx-site .vx-header-inner{max-width:1320px}}
+@media(max-width:1150px){
+ .vx-site .vx-header .vx-btn-sm{display:none}.vx-site .vx-burger{display:flex}
+ .vx-site .vx-nav{position:absolute;top:calc(100% + 12px);inset-inline:24px;display:flex;flex-direction:column;padding:12px;gap:5px;border-radius:20px;background:linear-gradient(125deg,#16374cf5,#0d2237f5);box-shadow:0 25px 60px #02061766;visibility:hidden;opacity:0;transform:translateY(-8px) scale(.98);transform-origin:top;transition:opacity .24s,transform .24s,visibility .24s;pointer-events:none;margin:0}
+ .vx-site .vx-nav.vx-open{visibility:visible;opacity:1;transform:none;pointer-events:auto}
+ .vx-site .vx-nav a{font-size:15px;min-height:48px;padding:12px 18px}
+ .vx-site .vx-header-actions{margin-inline-start:auto}
+}
+@media(max-width:900px){.vx-site .vx-section>.vx-container{padding:36px}.vx-site .vx-portfolio>.vx-grid{grid-template-columns:1fr}.vx-site .vx-portfolio>.vx-grid>.vx-card{padding:28px}.vx-site .vx-portfolio .vx-service-list{flex-direction:row;flex-wrap:wrap}.vx-site .vx-portfolio .vx-text-link{margin-top:4px}}
+@media(max-width:600px){.vx-site .vx-section{padding:18px 12px}.vx-site .vx-section>.vx-container{padding:30px 22px;border-radius:22px}.vx-site .vx-section h2{font-size:1.85rem;line-height:1.25}.vx-site .vx-section-sub{font-size:15px;line-height:1.85}.vx-site .vx-header-inner{height:76px;padding-inline:16px}.vx-site .vx-header .vx-brand-logo{height:38px}.vx-site .vx-nav{inset-inline:12px}.vx-site .vx-flagship{padding:26px 20px}.vx-site .vx-form{padding:24px 18px}.vx-site .vx-finder-result{padding:24px}.vx-site .vx-portfolio>.vx-grid>.vx-card{padding:24px}.vx-site .vx-product-info{padding:20px}.vx-site .vx-case-steps{gap:10px;font-size:12px}.vx-site .vx-request-panel{padding:20px}.vx-site .vx-page-space .vx-depth-object{opacity:.7}}
+@media(prefers-reduced-motion:reduce){.vx-site .vx-nav,.vx-site .vx-nav a,.vx-site .vx-nav a::after,.vx-site .vx-burger span{transition:none;animation:none}}
+.vx-site .vx-section{scroll-margin-top:104px}
+.vx-site .vx-nav.vx-open{background:linear-gradient(125deg,#16374cfb,#0d2237fa)}
+@media(max-width:1150px){.vx-site .vx-nav.vx-open{background:linear-gradient(125deg,#16374c,#0d2237);box-shadow:0 25px 60px #02061788,inset 0 1px #e0ffff22}}
