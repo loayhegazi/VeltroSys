@@ -68,6 +68,20 @@
     });
   }
 
+  if (burger && nav) {
+    function closeNav(restoreFocus) {
+      nav.classList.remove('vx-open');
+      burger.setAttribute('aria-expanded', 'false');
+      if (restoreFocus) burger.focus();
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && nav.classList.contains('vx-open')) closeNav(true);
+    });
+    document.addEventListener('click', function(e) {
+      if (!nav.contains(e.target) && !burger.contains(e.target)) closeNav(false);
+    });
+  }
+
   /* ---------- smooth anchor scrolling ---------- */
   document.querySelectorAll('.vx-site a[href^="#"]').forEach(function (a) {
     a.addEventListener("click", function (e) {
@@ -180,8 +194,8 @@ renderSlide();renderNeed();setMotion();
 /* Pure CSS 3D scene: no external runtime or continuous JavaScript loop. */
 (function(){
   var objects=[['73%','25%',112,44,.35],['91%','66%',66,36,.4],['43%','79%',52,32,.26],['11%','19%',38,40,.2],['57%','8%',28,30,.3]];
-  document.querySelectorAll('.vx-hero,.vx-store-hero').forEach(function(hero){
-    var scene=document.createElement('div');scene.className='vx-space';scene.setAttribute('aria-hidden','true');
+  document.querySelectorAll('.vx-site').forEach(function(hero){
+    var scene=document.createElement('div');scene.className='vx-space vx-page-space';scene.setAttribute('aria-hidden','true');
     var grid=document.createElement('div');grid.className='vx-space-grid';scene.appendChild(grid);
     objects.forEach(function(o){var cube=document.createElement('div');cube.className='vx-depth-object';cube.style.cssText='--x:'+o[0]+';--y:'+o[1]+';--size:'+o[2]+'px;--half:'+(o[2]/2)+'px;--speed:'+o[3]+'s;--alpha:'+o[4];for(var i=0;i<6;i++){var face=document.createElement('span');face.className='vx-depth-face';cube.appendChild(face);}scene.appendChild(cube);});
     for(var j=0;j<15;j++){var star=document.createElement('span');star.className='vx-space-star';star.style.cssText='--x:'+((j*37+9)%97)+'%;--y:'+((j*23+13)%91)+'%;--delay:-'+(j%8)+'s';scene.appendChild(star);}
