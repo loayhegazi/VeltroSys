@@ -617,3 +617,36 @@ body{margin:0}
 .vx-footer-pro{padding-top:0}
 @media(min-width:1051px){.vx-nav{gap:16px}.vx-nav a{font-size:13px}.vx-header-inner{gap:18px}.vx-header-actions .vx-btn{font-size:12px;padding:10px 14px}}
 .vx-dark .vx-portfolio .vx-service-list li{background:#193349;color:#d5e7f0;border-color:#3b596f}
+
+/* Revision 4: dimensional network background and larger brand signatures. */
+.vx-header .vx-brand-logo{height:46px;width:auto;max-width:none}
+.vx-header-inner{height:84px}
+.vx-footer-logo{height:44px;width:auto}
+.vx-brand-card-logo{width:min(285px,78%)}
+.vx-hero,.vx-store-hero{isolation:isolate}
+.vx-aurora,.vx-circuit,.vx-hero-glow{display:none}
+.vx-space{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;perspective:900px;background:radial-gradient(ellipse at 78% 45%,#0e74902b,transparent 66%)}
+.vx-space::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0f172ab8,transparent 72%)}
+.vx-space-grid{position:absolute;width:180%;height:130%;left:-40%;top:32%;background-image:linear-gradient(#22d3ee1f 1px,transparent 1px),linear-gradient(90deg,#22d3ee1f 1px,transparent 1px);background-size:76px 76px;transform:rotateX(64deg) rotateZ(-20deg);transform-origin:center center;mask-image:radial-gradient(ellipse,#0009,transparent 66%);animation:vx-grid-breathe 14s ease-in-out infinite alternate}
+.vx-depth-object{position:absolute;left:var(--x);top:var(--y);width:var(--size);height:var(--size);transform-style:preserve-3d;animation:vx-depth-turn var(--speed) linear infinite}
+.vx-depth-face{position:absolute;inset:0;border:1px solid #67e8f9aa;background:linear-gradient(135deg,#22d3ee12,#0e749022);box-shadow:inset 0 0 28px #22d3ee0b;backface-visibility:visible;opacity:var(--alpha)}
+.vx-depth-face:nth-child(1){transform:translateZ(var(--half))}
+.vx-depth-face:nth-child(2){transform:rotateY(180deg) translateZ(var(--half))}
+.vx-depth-face:nth-child(3){transform:rotateY(90deg) translateZ(var(--half))}
+.vx-depth-face:nth-child(4){transform:rotateY(-90deg) translateZ(var(--half))}
+.vx-depth-face:nth-child(5){transform:rotateX(90deg) translateZ(var(--half))}
+.vx-depth-face:nth-child(6){transform:rotateX(-90deg) translateZ(var(--half))}
+.vx-space-star{position:absolute;left:var(--x);top:var(--y);height:3px;width:3px;border-radius:50%;background:#a5f3fc;box-shadow:0 0 12px #22d3ee;opacity:.5;animation:vx-star-float 8s ease-in-out infinite alternate;animation-delay:var(--delay)}
+.vx-store-intro{position:relative;z-index:1}
+.vx-license-heading{grid-column:1/-1;padding-top:26px;margin-bottom:6px}
+.vx-license-heading h3{font-size:26px;margin:0 0 12px}
+.vx-license-heading p{font-size:14px;max-width:760px;color:var(--vx-body);line-height:1.8}
+.vx-product-art.vx-license-art{background:radial-gradient(circle at 50% 30%,#a5f3fc55,transparent 75%),#ecf7fa}
+.vx-dark .vx-product-art.vx-license-art{background:radial-gradient(circle at 50% 30%,#0e749055,transparent 75%),#0e1d30}
+@keyframes vx-depth-turn{from{transform:translateY(12px) rotateX(24deg) rotateY(0deg) rotateZ(-14deg)}50%{transform:translateY(-12px) rotateX(42deg) rotateY(180deg) rotateZ(10deg)}to{transform:translateY(12px) rotateX(24deg) rotateY(360deg) rotateZ(-14deg)}}
+@keyframes vx-grid-breathe{to{opacity:.45;transform:rotateX(67deg) rotateZ(-16deg) translateY(26px)}}
+@keyframes vx-star-float{to{transform:translate3d(14px,-22px,0);opacity:.18}}
+@media(max-width:1050px){.vx-header .vx-brand-logo{height:44px}.vx-header-inner{gap:12px}}
+@media(max-width:700px){.vx-header .vx-brand-logo{height:42px}.vx-header-inner{height:76px}.vx-space::after{background:linear-gradient(180deg,#0f172a88,transparent)}.vx-depth-object:nth-of-type(n+5){display:none}.vx-space-grid{background-size:60px 60px;opacity:.6}.vx-license-heading{padding-top:20px}.vx-license-heading h3{font-size:24px}}
+@media(max-width:380px){.vx-header .vx-brand-logo{height:38px}.vx-header-actions{gap:5px}.vx-header-inner{gap:6px}}
+@media(prefers-reduced-motion:reduce){.vx-space *{animation:none!important}.vx-depth-object{transform:rotateX(24deg) rotateY(34deg) rotateZ(-14deg)}}
