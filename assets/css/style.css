@@ -714,3 +714,8 @@ body{margin:0;background:#081221}
 .vx-site .vx-section{scroll-margin-top:104px}
 .vx-site .vx-nav.vx-open{background:linear-gradient(125deg,#16374cfb,#0d2237fa)}
 @media(max-width:1150px){.vx-site .vx-nav.vx-open{background:linear-gradient(125deg,#16374c,#0d2237);box-shadow:0 25px 60px #02061788,inset 0 1px #e0ffff22}}
+
+/* Revision 6: readable Why VeltroSys checklist on the navy section panels. */
+.vx-site .vx-section .vx-checks li{color:#e8f4fb}
+.vx-site .vx-section .vx-checks li::before{background:#164a61;border:1px solid #3f8098}
+.vx-site .vx-section .vx-checks li::after{border-color:#67e8f9}
