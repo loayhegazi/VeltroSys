@@ -726,3 +726,38 @@ body{margin:0;background:#081221}
 @media(max-width:1000px){.vx-office-layout{grid-template-columns:1fr}.vx-office-devices{grid-template-columns:1fr 1fr}.vx-office-scene{max-width:680px;margin:auto}.vx-office-bottom{grid-template-columns:1fr}}
 @media(max-width:600px){.vx-site .vx-office-title{display:block}.vx-office-title .vx-motion{margin-top:6px}.vx-office-presets span{flex-basis:100%;margin:0}.vx-office-devices{grid-template-columns:1fr}.vx-office-device{padding:12px}.vx-office-layout{gap:24px}.vx-office-visual{margin-inline:-10px}.vx-office-visual>p{padding-inline:12px}.vx-office-scene svg{min-height:190px}.vx-office-bottom{gap:20px}.vx-office-caveat{padding:16px}.vx-site .vx-office-bottom h2{font-size:24px}.vx-site .vx-office-section>.vx-container{padding-inline:20px}}
 @media(prefers-reduced-motion:reduce){.vx-office-wire,.vx-office-float{animation:none!important}}
+
+/* Revision 7: dark mode transforms the whole page (canvas, panels, cards, lists), not only text colours.
+   Selectors match the specificity of the Revision 5 light card rules so dark always wins. */
+.vx-site.vx-dark{background:linear-gradient(145deg,#04080f,#07111c 54%,#050b14)}
+body:has(.vx-site.vx-dark){background:#04080f}
+.vx-site.vx-dark .vx-page-space{background:radial-gradient(ellipse at 72% 24%,#0e749022,transparent 65%)}
+.vx-site.vx-dark .vx-page-space::after{background:linear-gradient(180deg,#02060c55,#02060c88)}
+.vx-site.vx-dark .vx-section>.vx-container{background:linear-gradient(125deg,#0a1625f5,#070f1af2);border-color:#2a5566;box-shadow:0 22px 65px #00000066,inset 0 1px #d5faff08}
+.vx-site.vx-dark .vx-section:nth-of-type(2n)>.vx-container{background:linear-gradient(125deg,#0b1a2af2,#08121ff4)}
+.vx-site.vx-dark .vx-section{color:#c7d8e7}
+.vx-site.vx-dark .vx-section h2,.vx-site.vx-dark .vx-section h3,.vx-site.vx-dark .vx-store-intro h1,.vx-site.vx-dark .vx-office-title h1{color:#f1f8ff}
+.vx-site.vx-dark .vx-portfolio>.vx-grid>.vx-card,
+.vx-site.vx-dark .vx-card,.vx-site.vx-dark .vx-flagship,.vx-site.vx-dark .vx-finder-result,.vx-site.vx-dark .vx-form,.vx-site.vx-dark .vx-faq details,.vx-site.vx-dark .vx-product,.vx-site.vx-dark .vx-request-panel,.vx-site.vx-dark .vx-catalog-empty,.vx-site.vx-dark .vx-request-summary{background:#0f2133;color:#c9d9e6;border-color:#2f566a;box-shadow:0 14px 32px #00000055}
+.vx-site.vx-dark .vx-flagship{background:linear-gradient(125deg,#10263a,#0d2233)}
+.vx-site.vx-dark .vx-portfolio>.vx-grid>.vx-card h3,.vx-site.vx-dark .vx-portfolio>.vx-grid>.vx-card>p,.vx-site.vx-dark .vx-card p,.vx-site.vx-dark .vx-flagship p,.vx-site.vx-dark .vx-finder-result p,.vx-site.vx-dark .vx-faq details p,.vx-site.vx-dark .vx-faq summary{color:#d3e2ee}
+.vx-site.vx-dark .vx-portfolio>.vx-grid>.vx-card h3,.vx-site.vx-dark .vx-card h3,.vx-site.vx-dark .vx-faq summary{color:#f4faff}
+.vx-site.vx-dark .vx-portfolio .vx-service-list li{background:#17344a;color:#e0eef7;border-color:#3f6a80}
+.vx-site.vx-dark .vx-portfolio .vx-service-number,.vx-site.vx-dark .vx-portfolio .vx-text-link,.vx-site.vx-dark .vx-text-link,.vx-site.vx-dark .vx-service-number{color:#67e8f9}
+.vx-site.vx-dark .vx-section a:not(.vx-btn){color:#67e8f9}
+.vx-site.vx-dark .vx-step p,.vx-site.vx-dark .vx-section-sub{color:#b9ccdc}
+.vx-site.vx-dark .vx-form label{color:#e6f1f8}
+.vx-site.vx-dark .vx-form input,.vx-site.vx-dark .vx-form select,.vx-site.vx-dark .vx-form textarea,.vx-site.vx-dark #vxProductForm input,.vx-site.vx-dark #vxProductForm select,.vx-site.vx-dark #vxProductForm textarea{background:#08121f;color:#f1f5f9;border-color:#42627a}
+.vx-site.vx-dark .vx-form input::placeholder,.vx-site.vx-dark .vx-form textarea::placeholder{color:#8da4b8}
+.vx-site.vx-dark .vx-office-presets button{background:#0c1d2e;color:#d5eaf3;border-color:#3d6a80}
+.vx-site.vx-dark .vx-office-presets button[aria-pressed=true]{background:#8ce7f0;color:#092135;border-color:#a2f0f6}
+.vx-site.vx-dark .vx-footer{background:#04090fee;border-top-color:#1f3a4b}
+
+/* Header brand: VS symbol keeps its size, the VeltroSys wordmark is larger (cropped from the horizontal logo). */
+.vx-site .vx-brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.vx-site .vx-header .vx-brand-mark{height:40px;width:auto;max-width:none}
+.vx-site .vx-header .vx-brand-word{--wh:27px;position:relative;display:block;overflow:hidden;height:var(--wh);width:calc(var(--wh)*4.415)}
+.vx-site .vx-header .vx-brand-word img{position:absolute;max-width:none;height:calc(var(--wh)*3.0588);width:auto;left:calc(var(--wh)*-3.309);top:calc(var(--wh)*-1.029)}
+.vx-site .vx-brand .vx-logo-dark{display:none}.vx-site.vx-dark .vx-brand .vx-logo-dark{display:block}.vx-site.vx-dark .vx-brand .vx-logo-light{display:none}
+@media(max-width:700px){.vx-site .vx-header .vx-brand-mark{height:34px}.vx-site .vx-header .vx-brand-word{--wh:21px}.vx-site .vx-brand{gap:7px}}
+@media(max-width:380px){.vx-site .vx-header .vx-brand-mark{height:30px}.vx-site .vx-header .vx-brand-word{--wh:17px}.vx-site .vx-brand{gap:5px}}
