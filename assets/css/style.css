@@ -753,11 +753,16 @@ body:has(.vx-site.vx-dark){background:#04080f}
 .vx-site.vx-dark .vx-office-presets button[aria-pressed=true]{background:#8ce7f0;color:#092135;border-color:#a2f0f6}
 .vx-site.vx-dark .vx-footer{background:#04090fee;border-top-color:#1f3a4b}
 
-/* Header brand: VS symbol keeps its size, the VeltroSys wordmark is larger (cropped from the horizontal logo). */
+/* Header brand: padded standalone wordmark avoids clipping at fractional pixel sizes. */
 .vx-site .vx-brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
 .vx-site .vx-header .vx-brand-mark{height:40px;width:auto;max-width:none}
-.vx-site .vx-header .vx-brand-word{--wh:27px;position:relative;display:block;overflow:hidden;height:var(--wh);width:calc(var(--wh)*4.415)}
-.vx-site .vx-header .vx-brand-word img{position:absolute;max-width:none;height:calc(var(--wh)*3.0588);width:auto;left:calc(var(--wh)*-3.309);top:calc(var(--wh)*-1.029)}
+.vx-site .vx-header .vx-brand-word{--wh:27px;position:relative;display:block;overflow:visible;height:calc(var(--wh)*1.071);width:calc(var(--wh)*4.462);flex:none;direction:ltr}
+.vx-site .vx-header .vx-brand-word img{position:static;display:block;max-width:none;height:100%;width:100%;object-fit:contain}
 .vx-site .vx-brand .vx-logo-dark{display:none}.vx-site.vx-dark .vx-brand .vx-logo-dark{display:block}.vx-site.vx-dark .vx-brand .vx-logo-light{display:none}
 @media(max-width:700px){.vx-site .vx-header .vx-brand-mark{height:34px}.vx-site .vx-header .vx-brand-word{--wh:21px}.vx-site .vx-brand{gap:7px}}
 @media(max-width:380px){.vx-site .vx-header .vx-brand-mark{height:30px}.vx-site .vx-header .vx-brand-word{--wh:17px}.vx-site .vx-brand{gap:5px}}
+
+/* Keep the approved slogan exact, including letter case, in English and Arabic. */
+.vx-site [data-i18n="hero.eyebrow"],.vx-site .vx-footer-tag{text-transform:none;direction:ltr;unicode-bidi:isolate}
+
+.vx-brand-card-lockup{text-align:center}.vx-brand-card-lockup .vx-brand-card-logo{width:min(285px,78%);margin-inline:auto}.vx-brand-card-lockup p{color:#cbd5e1;margin:12px 0 0;font-size:clamp(14px,1.5vw,19px);letter-spacing:.02em}
