@@ -784,3 +784,60 @@ body:has(.vx-site.vx-dark){background:#04080f}
 .vx-site .vx-show-body h3{color:#0f172a}
 .vx-site .vx-show-body p{color:#475569}
 .vx-site .vx-show-tags{color:#0e7490}
+
+.vx-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:28px}
+.vx-step{background:#fff;border:1px solid #cfe3ea;border-radius:18px;padding:26px}
+.vx-step h3{margin:10px 0 8px;color:#0f172a}.vx-step p{margin:0;color:#475569;line-height:1.65}
+.vx-step-n{display:inline-block;font-weight:800;color:#0e7490;font-size:1.4rem}
+.vx-home-more{margin-top:22px}
+.vx-office-teaser{display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:center}
+.vx-office-teaser-visual{background:linear-gradient(135deg,#0f172a,#0e7490);color:#67e8f9;border-radius:18px;padding:20px}
+.vx-office-teaser-visual svg{display:block;width:100%;height:auto}
+.vx-home-cta{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+@media(max-width:900px){.vx-steps{grid-template-columns:1fr}.vx-office-teaser{grid-template-columns:1fr}}
+.vx-home-more-out{max-width:1180px;margin:18px auto 0;padding-inline:24px}
+
+.vx-projs{display:grid;gap:34px;margin-top:34px}
+.vx-proj{display:grid;grid-template-columns:1fr 1.15fr;gap:0;background:#fff;border:1px solid #cfe3ea;border-radius:22px;overflow:hidden}
+.vx-proj-flip .vx-proj-visual{order:2}
+.vx-proj-visual{position:relative;background:#07111f;min-height:280px;display:flex;align-items:center}
+.vx-proj-visual .vx-iso,.vx-show-visual-iso .vx-iso{display:block;width:100%;height:auto}
+.vx-show-visual-iso{padding:0!important;background:#07111f!important}
+.vx-proj-body{padding:28px 30px;color:#0f172a}
+.vx-proj-body h3{margin:0 0 8px;font-size:1.4rem;color:#0f172a}
+.vx-proj-sum{margin:0 0 10px;color:#475569;line-height:1.7}
+.vx-proj-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px;border-top:1px solid #e2e8f0;padding-top:16px}
+.vx-proj-cols h4{margin:0 0 8px;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:#0e7490}
+.vx-proj-cols ul,.vx-proj-cols ol{margin:0;padding-inline-start:18px;font-size:.86rem;line-height:1.55;color:#334155}
+.vx-proj-cols li{margin-bottom:6px}
+.vx-iso .vx-flow{animation:vxflow 1.4s linear infinite}
+@keyframes vxflow{to{stroke-dashoffset:-28}}
+@media (prefers-reduced-motion:reduce){.vx-iso .vx-flow{animation:none}}
+.vx-motion-paused .vx-iso .vx-flow{animation:none}
+@media(max-width:900px){.vx-proj{grid-template-columns:1fr}.vx-proj-flip .vx-proj-visual{order:0}.vx-proj-cols{grid-template-columns:1fr}}
+/* showcase motion */
+.vx-sc-on .vx-sc{opacity:0;transform:translateY(34px) scale(.98);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+.vx-sc-on .vx-sc.vx-sc-in{opacity:1;transform:none}
+.vx-proj.vx-sc-in:hover,.vx-show-card.vx-sc-in:hover{transform:translateY(-6px);box-shadow:0 22px 50px -18px rgba(34,211,238,.45)}
+.vx-iso{transition:transform .5s ease;will-change:transform}
+.vx-proj-visual,.vx-show-visual-iso{overflow:hidden}
+.vx-proj-visual::after,.vx-show-visual-iso::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 40%,rgba(125,235,255,.14) 50%,transparent 60%);transform:translateX(-120%);pointer-events:none}
+.vx-sc-live .vx-proj-visual::after,.vx-sc-live .vx-show-visual-iso::after{animation:vxshine 6s ease-in-out 1s infinite}
+@keyframes vxshine{0%,70%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+.vx-sc .vx-iso>g{animation:vxfloat 6s ease-in-out infinite;animation-play-state:paused}
+.vx-sc-live .vx-iso>g{animation-play-state:running}
+@keyframes vxfloat{50%{transform:translateY(-5px)}}
+.vx-sc .vx-iso .vx-flow{animation-play-state:paused}
+.vx-sc-live .vx-iso .vx-flow{animation-play-state:running}
+.vx-pulse{animation:vxpulse 3s ease-in-out infinite;animation-play-state:paused}
+.vx-sc-live .vx-pulse{animation-play-state:running}
+@keyframes vxpulse{50%{opacity:.45}}
+.vx-iso .vx-wifi{animation:vxpulse 2s ease-in-out infinite}
+.vx-sc-on .vx-proj-cols li{opacity:0;transform:translateX(-10px);transition:opacity .5s ease var(--d,0ms),transform .5s ease var(--d,0ms)}
+[dir=rtl] .vx-sc-on .vx-proj-cols li{transform:translateX(10px)}
+.vx-sc-on .vx-sc-in .vx-proj-cols li{opacity:1;transform:none}
+.vx-show-badge{animation:vxbadge 3s ease-in-out infinite}
+@keyframes vxbadge{50%{box-shadow:0 0 0 5px rgba(34,211,238,.18)}}
+@media(prefers-reduced-motion:reduce){
+.vx-sc-on .vx-sc,.vx-sc-on .vx-proj-cols li{opacity:1!important;transform:none!important}
+.vx-sc .vx-iso>g,.vx-pulse,.vx-show-badge,.vx-iso .vx-wifi,.vx-iso .vx-flow,.vx-proj-visual::after,.vx-show-visual-iso::after{animation:none!important}}
