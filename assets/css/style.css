@@ -841,3 +841,8 @@ body:has(.vx-site.vx-dark){background:#04080f}
 @media(prefers-reduced-motion:reduce){
 .vx-sc-on .vx-sc,.vx-sc-on .vx-proj-cols li{opacity:1!important;transform:none!important}
 .vx-sc .vx-iso>g,.vx-pulse,.vx-show-badge,.vx-iso .vx-wifi,.vx-iso .vx-flow,.vx-proj-visual::after,.vx-show-visual-iso::after{animation:none!important}}
+/* showcase layout hardening */
+@media(max-width:900px){.vx-proj-visual{min-height:0;max-height:340px;justify-content:center}.vx-proj-visual .vx-iso{max-height:340px;width:auto;max-width:100%;margin:0 auto}}
+@media(min-width:901px){.vx-proj-visual{align-self:stretch}}
+.vx-proj-body h3,.vx-proj-body h4{color:inherit}
+.vx-proj-body h3{color:#0f172a}.vx-proj-body h4{color:#0e7490}
