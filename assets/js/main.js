@@ -180,7 +180,7 @@ function go(step){currentSlide=(currentSlide+step+data.en.length)%data.en.length
 document.getElementById('vxNext').addEventListener('click',function(){go(1);});
 document.getElementById('vxPrev').addEventListener('click',function(){go(-1);});
 document.querySelectorAll('[data-slide]').forEach(function(b){b.addEventListener('click',function(){currentSlide=+b.dataset.slide;renderSlide();});});
-var spotlight=document.querySelector('.vx-spotlight');
+var spotlight=document.querySelector('.vx-spotlight')||document.createElement('div');
 spotlight.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(1);}if(e.key==='ArrowLeft'){e.preventDefault();go(-1);}});
 var startX=null,startY=null;
 spotlight.addEventListener('touchstart',function(e){startX=e.changedTouches[0].clientX;startY=e.changedTouches[0].clientY;},{passive:true});
